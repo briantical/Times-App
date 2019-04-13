@@ -2,9 +2,27 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-require('dotenv');
-
 class App extends Component {
+
+  constructor(props){
+    super(props);
+    this.state ={
+      data : null
+    }    
+  }
+
+  componentDidMount(){
+    this.getData();
+  }
+  getData = ()=>{
+    fetch(`https://api.nytimes.com/svc/mostpopular/v2/emailed/7.json?api-key=${process.env.REACT_APP_API_KEY}`)
+    .then((res) =>res.json())
+    .then(data=>{
+      this.setState({data : data.results})      
+      })
+    .catch((error)=>console.log("Error:" + error))
+  }
+
   render() {
     return (
       <div className="App">
@@ -22,6 +40,7 @@ class App extends Component {
             Learn React
           </a>
         </header>
+        <div>{JSON.stringify(this.state.data)}</div>
       </div>
     );
   }
