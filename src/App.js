@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Slider from 'react-animated-slider';
+import 'react-animated-slider/build/horizontal.css';
 
 class App extends Component {
 
@@ -17,30 +18,28 @@ class App extends Component {
   getData = ()=>{
     fetch(`https://api.nytimes.com/svc/mostpopular/v2/emailed/7.json?api-key=${process.env.REACT_APP_API_KEY}`)
     .then((res) =>res.json())
-    .then(data=>{
+    .then(data=>{      
       this.setState({data : data.results})      
       })
     .catch((error)=>console.log("Error:" + error))
   }
 
   render() {
+    const {data} = this.state;
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-        <div>{JSON.stringify(this.state.data)}</div>
+      <div className="App">        
+        <Slider>          
+          {
+            (data !== null) ? 
+            data.map((article, index) => 
+              <div key={index}>
+                <h2>{article.des_facet[0]}</h2>
+                <div>{article.url}</div>
+              </div>)
+              :
+              <h2>NOTHING YET</h2>
+          }
+        </Slider>
       </div>
     );
   }
