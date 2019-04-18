@@ -17,20 +17,20 @@ header {
 }
 
 header section {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
   max-width: 1300px;
   margin: auto;
   padding: 20px;
-  background: #FFD800;
+  background: #FFFFFF;  
 }
 
 @media (max-width: 1515px) {
   header section {
     max-width: 100%;
   } 
-}
-
-header section .logo {
-  transform: translateX(-87px);
 }
 
 header section a {
@@ -52,7 +52,8 @@ button {
   -webkit-transition: all .5s ease;
           transition: all .5s ease;
   border: none;
-  background: #FFD800;
+  background: #FFFFFF;
+  color: #000000;
   border-radius: 30px;
   text-transform: uppercase;
   box-sizing: border-box;
@@ -113,7 +114,7 @@ button:hover {
 		top: 50%;
 		transform: translateY(-50%);
 		z-index: 10;
-		background: url('http://svgshare.com/i/41_.svg') no-repeat center center / 16px;
+		background: url('./assets/chevronrightfilled.png') no-repeat center center / 16px;
 		width: 32px;
 		height: 32px;
 		text-indent: -9999px;
@@ -121,7 +122,7 @@ button:hover {
 }
 
 .previousButton:hover, .nextButton:hover {
-  background: url('http://svgshare.com/i/41_.svg') no-repeat center center / 16px;
+  background: url('./assets/chevronrightfilled.png') no-repeat center center / 16px;
 }
 
 .previousButton {
