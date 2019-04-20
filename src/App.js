@@ -6,6 +6,8 @@ import Header from './components/Header';
 import Slider from 'react-animated-slider';
 import 'react-animated-slider/build/horizontal.css';
 
+let data = require("./components/Data");
+
 class App extends Component {
 
   constructor(props){
@@ -16,18 +18,11 @@ class App extends Component {
   }
 
   componentDidMount(){
-    this.getData();
+    this.getData();        
   }
+
   getData = ()=>{
-    let url = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${process.env.REACT_APP_API_KEY}`
-    console.log(url);
-    fetch(url)
-    .then((res) =>res.json())
-    .then(data=>{      
-      this.setState({data : data.articles});
-      console.log(data.articles)     
-      })
-    .catch((error)=>console.log("Error:" + error))
+    data.newsData().then(res => this.setState({data: res.articles}));
   }
 
   render() {

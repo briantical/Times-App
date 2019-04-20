@@ -1,10 +1,12 @@
-require('dotenv').config();
+import axios from 'axios'
 
-const getData = ()=>{
-	fetch("https://api.nytimes.com/svc/mostpopular/v2/emailed/7.json?api-key=" + process.env.API_KEY)
-	.then((res) =>res.json())
-	.then(data=>{console.log("Data:" + JSON.stringify(data))})
-	.catch((error)=>console.log("Error:" + error))
+export const newsData = async fetchData => {
+   try {
+   		console.log("Getting executed")
+      	const response = await axios(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${process.env.REACT_APP_API_KEY}`);
+      	return response.data
+  	} 
+  	catch (err) {
+    	console.log("Error: " + err)
+  	}
 }
-
-return getData();
