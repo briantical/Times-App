@@ -1,62 +1,12 @@
 import React, { Component } from 'react';
 import './App.css';
-import './styles.css';
-import './slider-animations.css';
-import Header from './components/Header';
-import Slider from 'react-animated-slider';
-import 'react-animated-slider/build/horizontal.css';
 
-let data = require("./components/Data");
+import Index from './components/Index'
 
-class App extends Component {
-
-  constructor(props){
-    super(props);
-    this.state ={
-      data : null
-    }    
-  }
-
-  componentDidMount(){
-    this.getData();        
-  }
-
-  getData = ()=>{
-    data.newsData().then(res => this.setState({data: res.articles}));
-  }
-
-  render() {
-    const {data} = this.state;
-    return (
-      <div>
-          <Header/>
-          <div className="wrapper">        
-            <Slider className="slider-wrapper">          
-              {
-                (data !== null) ? 
-                data.map((article, index) =>
-                  <div
-                    key={index}
-                    className="slider-content"
-                    style={{ background: `url('${article.urlToImage}') no-repeat center center` }}
-                  >   
-                    <div className="inner">
-                      <h2>{article.title}</h2>
-                      <div>{article.description + " ..."}</div>
-                      <a href={article.url}><button>Read more</button></a>
-                    </div>
-                    <section>                  
-                      <span>
-                        Posted by <strong>{article.source.name}</strong>
-                      </span>
-                    </section>                           
-                  </div>)
-                  :
-                  <h2>NOTHING YET</h2>
-              }          
-            </Slider>
-          </div>
-      </div>
+class App extends Component { 
+  render() {    
+    return (    
+      <Index/>
     );
   }
 }

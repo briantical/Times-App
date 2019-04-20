@@ -1,16 +1,15 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Slider from 'react-animated-slider';
 import 'react-animated-slider/build/horizontal.css';
 
-const Main = (props) => {
-  const {articles} = this.props;
+const Main = (props) => {  
   return(
   	<div className="wrapper">
     	<Slider className="slider-wrapper">          
           	{
-	            (articles !== null) 
+	            (props.articles !== null) 
 	            ? 
-	                articles.map((article, index) =>
+	                props.articles.map((article, index) =>
 			            <div
 		                	key={index}
 		                	className="slider-content"

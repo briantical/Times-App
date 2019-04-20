@@ -3,6 +3,8 @@
 body {
   font-family: 'Lato', sans-serif;
   box-sizing: border-box;  
+  width: 100%;
+  height: 100%;
 }
 
 header {
@@ -71,6 +73,7 @@ button:hover {
 .wrapper {
   max-width: 1335px;
   box-sizing: border-box;  
+  padding-top: 75px;
   margin: auto;
 }
 
@@ -111,7 +114,7 @@ button:hover {
 		top: 50%;
 		transform: translateY(-50%);
 		z-index: 10;
-		background: url('./assets/chevronrightfilled.png') no-repeat center center / 16px;
+		background: url('../../assets/chevronrightfilled.png') no-repeat center center / 16px;
 		width: 32px;
 		height: 32px;
 		text-indent: -9999px;
@@ -119,7 +122,7 @@ button:hover {
 }
 
 .previousButton:hover, .nextButton:hover {
-  background: url('./assets/chevronrightfilled.png') no-repeat center center / 16px;
+  background: url('../../assets/chevronrightfilled.png') no-repeat center center / 16px;
 }
 
 .previousButton {

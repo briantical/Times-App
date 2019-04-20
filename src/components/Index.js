@@ -8,7 +8,7 @@ import Footer from './Footer';
 import Main from './Main';
 
 
-let data = require("./components/Data");
+let data = require("../components/Data");
 
 export default class Index extends Component {
 
@@ -30,7 +30,7 @@ export default class Index extends Component {
   render() {
     const {data} = this.state;
     return (
-      <div>
+      <div className="holdingContainer">
           <Header/>           
           <Main articles={data}/>                             
           <Footer/>
