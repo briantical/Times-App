@@ -1,3 +1,4 @@
+//This is the entry point to the entire application
 import React, { Component } from 'react';
 import './App.css';
 

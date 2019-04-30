@@ -1,3 +1,4 @@
+//This is the footer component of the application
 import React from 'react';
 
 const logoName = "HAB.aRI" 

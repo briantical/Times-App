@@ -1,3 +1,4 @@
+//This is the Header component of the application
 import React from 'react';
 import habari from '../assets/habari.png';
 
