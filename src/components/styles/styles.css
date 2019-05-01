@@ -12,6 +12,32 @@ body {
   height: 100vh; 
 }
 
+.appHeader, .appFooter{
+  width: 100vw;
+  height: 10vh;
+}
+
+.appMain{
+  width: 100vw;
+  height: 80vh;
+}
+
+.mainFold{
+  height: 100%
+}
+
+.noData{
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  color: blue;
+  height: 100%; 
+}
+
+.mobileview{
+  height: 100%;
+}
+
 header {
   position: fixed;
   top: 0;
@@ -77,8 +103,8 @@ button:hover {
 
 .wrapper {
   max-width: 1335px;
-  box-sizing: border-box;  
-  padding-top: 75px;
+  box-sizing: border-box;
+  height: 100%;  
   margin: auto;
 }
 
@@ -93,7 +119,7 @@ button:hover {
 
 .slider-wrapper {
   position: relative;
-  height: 70vh;
+  height: 100%;
   overflow: hidden;
 }
 

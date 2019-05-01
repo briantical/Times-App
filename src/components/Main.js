@@ -1,13 +1,14 @@
 //This is the main content component of the application
-import React, { Component } from 'react';
+import React from 'react';
 import Slider from 'react-animated-slider';
 import 'react-animated-slider/build/horizontal.css';
 
 //The data from the API is obtained from the articles prop
-const Main = (props) => {  
+const Main = (props) => {   
   return(
+  	<div className="mainFold">
   	<div className="wrapper">
-    	<Slider className="slider-wrapper">          
+    	<Slider className="slider-wrapper" style={{height: "100%"}}>          
           	{
 	            (props.articles !== null) 
 	            ? 	
@@ -30,10 +31,12 @@ const Main = (props) => {
 			            </div>)
 	            
 		        :
-		              	<h2>DATA NOT YET AVAILABLE</h2>
+		              	<div className="noData">DATA NOT YET AVAILABLE</div>
           	}          
         </Slider>
-    </div>)
+    </div>
+    </div>
+    )
 }
 
 export default Main;

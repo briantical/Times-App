@@ -21,7 +21,8 @@ export default class Index extends Component {
     super(props);
     //set the state data to null until its populated by the API
     this.state ={
-      data : null
+      data : null,
+      error : null
     }    
   }
 
@@ -30,20 +31,31 @@ export default class Index extends Component {
     this.getData();        
   }
 //Function to get the data
-  getData = ()=>{
-    //From the fetched data, get the news articles only
-    //update the state with the data fetched from the API    
-    data.newsData().then(res => this.setState({data: res.articles}));
+  getData = ()=>{        
+    data.newsData().then(res => {
+      typeof(res) != "undefined" ?
+      this.setState({data: res.articles})
+      : this.setState({data: null})
+    }).catch(Err => {      
+      this.setState({error: Err})
+    })
   }
 //Render the components in the browser
   render() {
     const {data} = this.state;
     return (
       <div className="holdingContainer">
-          <ButtonAppBar/> 
+          <div className="appHeader">
+            <ButtonAppBar/>
+          </div>
+          
           {/*Pass the data fetched from the API to the Main content as a prop*/}          
-          <Main articles={data}/>                             
-          <BottomAppBar/>
+          <div className="appMain">
+            <Main articles={data}/>
+          </div>
+          <div className="appFooter">
+            <BottomAppBar/>
+          </div>                   
       </div>
     );
   }

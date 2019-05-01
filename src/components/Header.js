@@ -28,10 +28,10 @@ function ButtonAppBar(props) {
       <AppBar position="fixed">
         <Toolbar>
           <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
-          <Avatar className={classes.avatar}>HA</Avatar>
+          <Avatar className={classes.avatar}>H.a</Avatar>
           </IconButton>
           <Typography variant="h6" color="inherit" className={classes.grow}>
-            Habari - News
+            HAB.aRI | News
           </Typography>
           
         </Toolbar>

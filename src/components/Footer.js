@@ -3,9 +3,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
-import IconButton from "@material-ui/core/IconButton";
 
 const styles = {
   appBar: {
@@ -26,13 +24,11 @@ function BottomAppBar({ classes }) {
       <AppBar position="fixed" color="primary" className={classes.appBar}>        
           <Typography>
           <center>
-            <b style={{color:'white'}}>Copyright - 2019</b>
-            <p style={{color:'white'}}><strong>Dorothy Joy Nansubuga -- Rodney Mathias Ssentamu -- Brian Ivan Lutaaya</strong></p>
+            <b style={{color:'white'}}>All Rights Reserved. Copyright 2019</b>            
+            <p style={{color:'white'}}><strong>Dorothy Joy Nansubuga | Rodney Mathias Ssentamu | Brian Ivan Lutaaya</strong></p>            
             </center>
           </Typography>        
-      </AppBar>
-    
-    
+      </AppBar>      
   );
 }
 
