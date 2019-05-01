@@ -40,10 +40,10 @@ export default class Index extends Component {
     const {data} = this.state;
     return (
       <div className="holdingContainer">
-          <Header/> 
+          <ButtonAppBar/> 
           {/*Pass the data fetched from the API to the Main content as a prop*/}          
           <Main articles={data}/>                             
-          <Footer/>
+          <BottomAppBar/>
       </div>
     );
   }

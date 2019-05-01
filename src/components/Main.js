@@ -10,7 +10,7 @@ const Main = (props) => {
     	<Slider className="slider-wrapper">          
           	{
 	            (props.articles !== null) 
-	            ? 	{/*Iterate over the news articles available*/}
+	            ? 	
 	                props.articles.map((article, index) =>
 			            <div
 		                	key={index}
@@ -28,7 +28,7 @@ const Main = (props) => {
 			                  </span>
 			                </section>                           
 			            </div>)
-	            }
+	            
 		        :
 		              	<h2>DATA NOT YET AVAILABLE</h2>
           	}          
