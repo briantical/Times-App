@@ -8,8 +8,8 @@ import './styles/slider-animations.css';
 
 
 //Import the Header, Footer and Main components
-import Header from './Header';
-import Footer from './Footer';
+import ButtonAppBar from './Header';
+import BottomAppBar from './Footer';
 import Main from './Main';
 
 //Get the fetched data
