@@ -10,7 +10,7 @@ import IconButton from "@material-ui/core/IconButton";
 const styles = {
   appBar: {
     top: "auto",
-    bottom: 0
+    bottom: 0 
   },
   menuButton: {
     marginLeft: -12,
@@ -22,21 +22,17 @@ const styles = {
 };
 
 function BottomAppBar({ classes }) {
-  return (
-    <div style={{paddingTop: '36px'}}>
-    
-      <AppBar position="fixed" color="primary" className={classes.appBar}>
-        
+  return (      
+      <AppBar position="fixed" color="primary" className={classes.appBar}>        
           <Typography>
           <center>
             <b style={{color:'white'}}>Copyright - 2019</b>
             <p style={{color:'white'}}><strong>Dorothy Joy Nansubuga -- Rodney Mathias Ssentamu -- Brian Ivan Lutaaya</strong></p>
             </center>
-          </Typography>
-        
+          </Typography>        
       </AppBar>
     
-    </div>
+    
   );
 }
 
